@@ -1,1 +1,33 @@
-
+---
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채권추심 실무 정보 | 서진원</title>
+<style>
+  body { font-family: 'Malgun Gothic', sans-serif; max-width: 720px;
+         margin: 0 auto; padding: 40px 20px; color: #222; }
+  h1 { border-bottom: 3px solid #1a3c6e; padding-bottom: 12px; }
+  ul { list-style: none; padding: 0; }
+  li { padding: 16px 0; border-bottom: 1px solid #eee; }
+  a { color: #1a3c6e; text-decoration: none; font-size: 18px; font-weight: bold; }
+  a:hover { text-decoration: underline; }
+  .date { color: #888; font-size: 14px; margin-left: 8px; }
+  .home { display: inline-block; margin-top: 30px; color: #555; font-size: 15px; }
+</style>
+</head>
+<body>
+<h1>채권추심 실무 정보</h1>
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <span class="date">{{ post.date | date: "%Y년 %m월 %d일" }}</span>
+  </li>
+  {% endfor %}
+</ul>
+<a class="home" href="/">← 메인으로 돌아가기</a>
+</body>
+</html>
