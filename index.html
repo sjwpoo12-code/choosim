@@ -51,6 +51,12 @@ body{
   padding:7px 14px;border-radius:2px;white-space:nowrap;
 }
 .topbar a.call:hover{background:var(--ink);color:var(--paper)}
+  .topbar a.blog-link{
+  font-size:14px;font-weight:500;color:var(--ink-soft);
+  text-decoration:none;margin-right:16px;white-space:nowrap;
+}
+.topbar a.blog-link:hover{color:var(--ink);text-decoration:underline}
+.topbar .top-right{display:flex;align-items:center}
 
 /* ───────── 히어로 ───────── */
 .hero{padding:72px 0 64px;border-bottom:1px solid var(--line)}
@@ -296,7 +302,10 @@ footer .fine{margin-top:18px;font-size:12px}
     <div class="brand">서진원 차장
       <small>케이에스신용정보 중부지점 · 채권추심</small>
     </div>
-    <a class="call" href="tel:01030549755">010-3054-9755</a>
+    <div class="top-right">
+      <a class="blog-link" href="/blog">실무 정보</a>
+      <a class="call" href="tel:01030549755">010-3054-9755</a>
+    </div>
   </div>
 </header>
 
@@ -521,6 +530,7 @@ footer .fine{margin-top:18px;font-size:12px}
 <footer>
   <div class="wrap">
     <b>케이에스신용정보 중부지점 · 서진원 차장</b>
+    <div style="margin-top:6px"><a href="/blog" style="color:var(--ink);font-weight:700">채권추심 실무 정보 (블로그) →</a></div>
     <div class="rows">
       <span>대전광역시 중구 계백로 1559, 2층 (유천동)</span>
       <span>전화 <a href="tel:01030549755">010-3054-9755</a> · 이메일 <a href="mailto:sjwpoo@naver.com">sjwpoo@naver.com</a></span>
