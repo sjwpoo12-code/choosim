@@ -1,3 +1,7 @@
 title: 채권추심 서진원
 description: 18년 경력 채권추심 전문가의 실무 정보
 theme: minima
+exclude:
+  - scripts
+  - package.json
+  - README.md
