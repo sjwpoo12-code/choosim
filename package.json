@@ -1,0 +1,15 @@
+{
+  "name": "choosim-blog-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "채권추심 서진원 블로그 글 생성/발행 자동화 스크립트",
+  "type": "module",
+  "scripts": {
+    "create-post": "node scripts/create-post.js",
+    "publish-naver": "node scripts/publish-naver.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.47.0"
+  }
+}
