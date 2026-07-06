@@ -4,7 +4,8 @@
 //
 // 사용법:
 //   node scripts/create-post.js --keyword "가압류 신청" --title "가압류 신청 방법" \
-//     --slug "provisional-seizure" --body-file /path/to/body.md
+//     --slug "provisional-seizure" --body-file /path/to/body.md \
+//     --category "법적절차" --description "메타 설명 (80~110자 권장)"
 
 import fs from "node:fs";
 import path from "node:path";
@@ -37,7 +38,7 @@ function stripMarkdown(md) {
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
-  const { keyword, title, slug, "body-file": bodyFile, date } = args;
+  const { keyword, title, slug, category, description, "body-file": bodyFile, date } = args;
 
   if (!title || !slug || !bodyFile) {
     console.error(
@@ -56,6 +57,12 @@ function main() {
   const frontMatterLines = ["---", "layout: post", `title: "${title.replace(/"/g, '\\"')}"`];
   if (keyword) {
     frontMatterLines.push(`keyword: "${keyword.replace(/"/g, '\\"')}"`);
+  }
+  if (category) {
+    frontMatterLines.push(`category: ${category}`);
+  }
+  if (description) {
+    frontMatterLines.push(`description: "${description.replace(/"/g, '\\"')}"`);
   }
   frontMatterLines.push("---", "");
 

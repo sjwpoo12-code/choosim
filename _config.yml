@@ -1,7 +1,34 @@
 title: 채권추심 서진원
-description: 18년 경력 채권추심 전문가의 실무 정보
+description: 18년 경력 채권추심 전문가의 실무 정보 — 지급명령, 가압류, 소멸시효, 미수금 회수
+url: "https://seojinwon.com"
+lang: ko
+timezone: Asia/Seoul
+author:
+  name: 서진원
+
 theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# 구글 도구 연동 — docs/google-setup-guide.md 참고
+# 아래 두 줄의 맨 앞 # 을 지우고 실제 값을 넣으면 자동으로 사이트에 반영됩니다.
+# google_analytics: G-XXXXXXXXXX
+# google_site_verification: 값
+
 exclude:
   - scripts
   - package.json
   - README.md
+  - docs
+  - node_modules

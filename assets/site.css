@@ -1,0 +1,278 @@
+/* seojinwon.com 공용 디자인 시스템
+   index.html(랜딩)의 '서류·인장' 컨셉과 동일한 토큰을 사용한다.
+   랜딩은 자체 인라인 CSS를 유지하고, 블로그·절차 등 하위 페이지가 이 파일을 쓴다. */
+
+:root{
+  --ink:#16233A;
+  --ink-soft:#3E5470;
+  --paper:#F5F6F3;
+  --paper-deep:#EBEDE8;
+  --line:#C9CEC6;
+  --seal:#B4232A;
+  --cta:#1C3D6E;
+  --cta-hover:#122B50;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans KR',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+.serif{font-family:'Noto Serif KR',serif}
+.mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.08em}
+a{color:var(--cta)}
+img{max-width:100%}
+
+/* ── 상단 바 ── */
+.topbar{
+  border-bottom:1px solid var(--line);
+  background:var(--paper);
+  position:sticky;top:0;z-index:50;
+}
+.topbar .wrap{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:14px;padding-bottom:14px;gap:10px;
+}
+.topbar .brand{font-weight:700;font-size:15px;white-space:nowrap}
+.topbar .brand a{color:var(--ink);text-decoration:none}
+.topbar .brand small{display:block;font-weight:400;font-size:12px;color:var(--ink-soft)}
+.topbar nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.topbar nav a.nav-link{
+  font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;
+  border:1px solid var(--line);padding:7px 14px;border-radius:2px;background:#fff;
+  white-space:nowrap;
+}
+.topbar nav a.nav-link:hover{text-decoration:underline}
+.topbar nav a.nav-link.active{border-color:var(--ink);background:var(--paper-deep)}
+.topbar nav a.call{
+  font-family:'IBM Plex Mono',monospace;font-size:14px;
+  color:var(--ink);text-decoration:none;border:1px solid var(--ink);
+  padding:7px 14px;border-radius:2px;white-space:nowrap;
+}
+.topbar nav a.call:hover{background:var(--ink);color:var(--paper)}
+
+/* ── 공통 섹션 ── */
+section{padding:64px 0}
+.sec-label{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+  color:var(--ink-soft);margin-bottom:14px;
+}
+h2{
+  font-family:'Noto Serif KR',serif;font-weight:700;
+  font-size:clamp(22px,3.6vw,30px);line-height:1.4;
+  margin-bottom:26px;word-break:keep-all;
+}
+.btn{
+  display:inline-block;background:var(--cta);color:#fff;
+  font-size:16px;font-weight:700;text-decoration:none;
+  padding:16px 34px;border:none;border-radius:2px;cursor:pointer;
+  transition:background .15s;
+}
+.btn:hover{background:var(--cta-hover)}
+.btn:focus-visible{outline:3px solid var(--seal);outline-offset:2px}
+
+/* ── 페이지 히어로(하위 페이지 공용) ── */
+.page-hero{
+  padding:56px 0 44px;border-bottom:1px solid var(--line);
+}
+.page-hero .eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+  color:var(--seal);margin-bottom:16px;
+}
+.page-hero h1{
+  font-family:'Noto Serif KR',serif;font-weight:900;
+  font-size:clamp(26px,4.6vw,38px);line-height:1.35;
+  margin-bottom:14px;word-break:keep-all;
+}
+.page-hero p.lead{font-size:16px;color:var(--ink-soft);max-width:620px;word-break:keep-all}
+
+/* ── 블로그 목록 ── */
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 6px}
+.chip{
+  font-size:13.5px;font-weight:700;color:var(--ink);
+  border:1px solid var(--line);background:#fff;border-radius:2px;
+  padding:7px 14px;cursor:pointer;
+}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.post-list{list-style:none;margin-top:22px}
+.post-card{
+  background:#fff;border:1px solid var(--line);
+  padding:26px 28px;margin-bottom:16px;
+}
+.post-card .meta{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;
+  color:var(--ink-soft);margin-bottom:10px;display:flex;gap:14px;flex-wrap:wrap;
+}
+.post-card .meta .cat{color:var(--seal)}
+.post-card h3{
+  font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;
+  line-height:1.45;word-break:keep-all;margin-bottom:10px;
+}
+.post-card h3 a{color:var(--ink);text-decoration:none}
+.post-card h3 a:hover{border-bottom:2px solid var(--seal)}
+.post-card .excerpt{font-size:15px;color:var(--ink-soft);word-break:keep-all;margin-bottom:12px}
+.post-card .more{
+  font-size:14px;font-weight:700;color:var(--cta);text-decoration:none;
+}
+.post-card .more:hover{text-decoration:underline}
+
+/* ── 글 상세 ── */
+.post{padding:56px 0 24px}
+.post .post-meta{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.1em;
+  color:var(--ink-soft);margin-bottom:18px;display:flex;gap:14px;flex-wrap:wrap;
+}
+.post .post-meta .cat{color:var(--seal)}
+.post h1.post-title{
+  font-family:'Noto Serif KR',serif;font-weight:900;
+  font-size:clamp(25px,4.4vw,36px);line-height:1.4;
+  margin-bottom:34px;word-break:keep-all;
+  padding-bottom:24px;border-bottom:1px solid var(--line);
+}
+.post-body{font-size:17px;line-height:1.85;word-break:keep-all}
+.post-body p{margin-bottom:22px}
+.post-body h2{
+  font-size:clamp(19px,3vw,24px);margin:44px 0 18px;padding-top:22px;
+  border-top:1px solid var(--line);
+}
+.post-body h3{
+  font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;
+  margin:30px 0 12px;
+}
+.post-body ul,.post-body ol{margin:0 0 22px 22px}
+.post-body li{margin-bottom:8px}
+.post-body strong{font-weight:700}
+.post-body blockquote{
+  background:#fff;border:1px solid var(--line);border-left:3px solid var(--seal);
+  padding:18px 22px;margin-bottom:22px;color:var(--ink-soft);font-size:15.5px;
+}
+.post-body table{width:100%;border-collapse:collapse;margin-bottom:22px;font-size:15px;background:#fff}
+.post-body th,.post-body td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+.post-body th{background:var(--paper-deep);font-weight:700}
+
+/* ── 글 하단: 면책·저자·CTA·관련글 ── */
+.disclaimer{
+  margin:40px 0 0;padding:16px 18px;font-size:13px;color:var(--ink-soft);
+  border:1px dashed var(--line);background:var(--paper-deep);word-break:keep-all;
+}
+.author-box{
+  display:flex;gap:22px;align-items:flex-start;
+  background:#fff;border:1px solid var(--line);padding:26px 28px;margin-top:28px;
+}
+.author-box img{
+  width:84px;height:104px;object-fit:cover;border:1px solid var(--line);flex-shrink:0;
+}
+.author-box .a-label{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;
+  color:var(--ink-soft);margin-bottom:6px;
+}
+.author-box .a-name{
+  font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;margin-bottom:4px;
+}
+.author-box .a-name .seal-tag{
+  display:inline-block;font-size:12px;color:var(--seal);border:1.5px solid var(--seal);
+  border-radius:3px;padding:1px 7px;margin-left:8px;vertical-align:2px;
+  transform:rotate(-3deg);
+}
+.author-box .a-role{font-size:13.5px;color:var(--ink-soft);margin-bottom:8px}
+.author-box .a-bio{font-size:14px;color:var(--ink-soft);word-break:keep-all}
+.cta-box{
+  background:var(--ink);color:var(--paper);
+  padding:36px 32px;margin-top:28px;text-align:left;
+}
+.cta-box .c-label{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+  color:#B8C4D6;margin-bottom:12px;
+}
+.cta-box p.c-head{
+  font-family:'Noto Serif KR',serif;font-size:clamp(18px,3vw,23px);font-weight:700;
+  line-height:1.5;margin-bottom:8px;word-break:keep-all;
+}
+.cta-box p.c-sub{font-size:14.5px;color:#B8C4D6;margin-bottom:22px;word-break:keep-all}
+.cta-box .btn{background:#fff;color:var(--ink)}
+.cta-box .btn:hover{background:var(--paper-deep)}
+.cta-box .c-tel{margin-top:14px;font-size:14px;color:#B8C4D6}
+.cta-box .c-tel a{color:var(--paper);font-family:'IBM Plex Mono',monospace;text-decoration:none;font-weight:700}
+.related{margin-top:44px}
+.related .r-label{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+  color:var(--ink-soft);margin-bottom:14px;
+}
+.related ul{list-style:none}
+.related li{border-top:1px solid var(--line);padding:13px 2px}
+.related li:last-child{border-bottom:1px solid var(--line)}
+.related a{
+  color:var(--ink);text-decoration:none;font-weight:700;font-size:15.5px;
+  font-family:'Noto Serif KR',serif;
+}
+.related a:hover{border-bottom:2px solid var(--seal)}
+.related .r-date{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);margin-left:10px;
+}
+
+/* ── 절차 페이지 ── */
+.proc-steps{counter-reset:pstep;list-style:none;margin-top:10px}
+.proc-step{
+  background:#fff;border:1px solid var(--line);padding:28px 30px;
+  margin-bottom:18px;position:relative;
+}
+.proc-step .p-no{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--seal);
+  letter-spacing:.16em;margin-bottom:10px;
+}
+.proc-step h3{
+  font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700;margin-bottom:10px;
+  word-break:keep-all;
+}
+.proc-step p{font-size:15px;color:var(--ink-soft);word-break:keep-all;margin-bottom:12px}
+.proc-step .prep{
+  border-top:1px dashed var(--line);padding-top:12px;font-size:14px;word-break:keep-all;
+}
+.proc-step .prep b{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;color:var(--ink-soft);display:block;margin-bottom:6px}
+.proc-step .prep ul{list-style:none}
+.proc-step .prep li{padding-left:16px;position:relative;color:var(--ink-soft);margin-bottom:4px}
+.proc-step .prep li::before{content:"·";position:absolute;left:2px;font-weight:900;color:var(--seal)}
+
+/* ── FAQ ── */
+.faq{margin-top:8px}
+.faq details{
+  background:#fff;border:1px solid var(--line);margin-bottom:12px;
+}
+.faq summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;padding:18px 22px;
+  word-break:keep-all;list-style-position:inside;
+}
+.faq details[open] summary{border-bottom:1px dashed var(--line)}
+.faq .a{padding:16px 22px 20px;font-size:15px;color:var(--ink-soft);word-break:keep-all}
+
+/* ── 푸터 ── */
+footer{
+  border-top:1px solid var(--ink);background:var(--paper-deep);
+  padding:36px 0 44px;font-size:13.5px;color:var(--ink-soft);margin-top:40px;
+}
+footer b{color:var(--ink);font-size:14.5px}
+footer .rows{display:grid;gap:4px;margin-top:10px}
+footer a{color:var(--ink-soft)}
+footer .fine{margin-top:18px;font-size:12px}
+footer .f-nav{margin-top:12px;display:flex;gap:16px;flex-wrap:wrap}
+footer .f-nav a{color:var(--ink);font-weight:700;text-decoration:none;font-size:13.5px}
+footer .f-nav a:hover{text-decoration:underline}
+
+/* ── 반응형 ── */
+@media (max-width:720px){
+  section{padding:48px 0}
+  .page-hero{padding:44px 0 36px}
+  .post{padding:44px 0 16px}
+  .post-card{padding:22px 20px}
+  .author-box{flex-direction:column}
+  .author-box img{width:96px;height:118px}
+  .cta-box{padding:28px 22px}
+  .topbar .brand small{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
