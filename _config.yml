@@ -24,7 +24,7 @@ defaults:
 # 구글 도구 연동 — docs/google-setup-guide.md 참고
 # 아래 두 줄의 맨 앞 # 을 지우고 실제 값을 넣으면 자동으로 사이트에 반영됩니다.
 # google_analytics: G-XXXXXXXXXX
- google_site_verification: n4eTvmNZkrArZsKhUdNmX9CkKJTgcSE__2PKrxb6OS4
+google_site_verification: n4eTvmNZkrArZsKhUdNmX9CkKJTgcSE__2PKrxb6OS4
 
 exclude:
   - scripts
