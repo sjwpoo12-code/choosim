@@ -351,17 +351,17 @@ footer .fine{margin-top:18px;font-size:12px}
 <section>
   <div class="wrap">
     <div class="sec-label">01 — 이런 상황이라면</div>
-    <h2>개인 채권이든, 사업자 미수금이든<br>구조는 같습니다. 문제는 실행입니다.</h2>
+    <h2>집행권원이 있는 개인채권부터<br>사업자 미수금까지 확인합니다.</h2>
     <div class="tracks">
       <div class="track">
-        <h3>개인 간 채권</h3>
+        <h3>집행권원이 있는 개인채권</h3>
         <ul>
-          <li>빌려준 돈을 몇 년째 못 받고 있다</li>
-          <li>판결(지급명령)은 받았는데 그 다음을 모르겠다</li>
+          <li>판결을 받았지만 아직 변제받지 못했다</li>
+          <li>확정된 지급명령 등 집행권원을 보유하고 있다</li>
           <li>채무자가 연락을 끊고 잠적했다</li>
           <li>"재산이 없다"는 말만 반복한다</li>
         </ul>
-        <p class="sum">판결문이 있어도 집행하지 않으면 종이일 뿐입니다. 실거주지·재산을 찾는 것이 시작입니다.</p>
+        <p class="sum">일반 개인 민사채권은 바로 위임받을 수 없습니다. 먼저 채권자 본인 또는 변호사를 통해 판결·확정 지급명령 등 집행권원을 확보해야 합니다.</p>
       </div>
       <div class="track">
         <h3>사업자 미수금</h3>
@@ -444,20 +444,21 @@ footer .fine{margin-top:18px;font-size:12px}
 
       <div class="case">
         <div class="case-head">
-          <h3>간판만 바꾼 회사 — 실질 동일성 입증 자료 확보</h3>
-          <span class="case-no">CASE 03 · 물품대금 1억 2천만 원</span>
+          <h3>간판만 바꾼 회사 — 거래 흐름과 영업 현황 확인</h3>
+          <span class="case-no">CASE 03 · 물품대금 1억 원대</span>
         </div>
         <ol class="flow">
-          <li>식자재 납품 대금을 미루던 거래처가 상호와 대표 명의만 바꿔 같은 자리에서 영업 지속, 기존 회사 앞으로는 남은 재산 없음</li>
-          <li>세금계산서·입금 계좌 대조로 신·구 회사의 실질적 동일성을 뒷받침할 자료 확보</li>
-          <li>확보한 자료를 근거로 채권자가 법적 절차(영업양수인 책임·정산금 회수)를 진행할 수 있도록 지원</li>
+          <li>납품대금을 미루던 거래처가 상호와 대표 명의를 바꾼 뒤 같은 장소에서 영업을 지속</li>
+          <li>세금계산서·입금 계좌와 영업 현황을 대조해 신·구 회사의 거래 흐름을 확인</li>
+          <li>확보된 자료를 바탕으로 채권자가 별도의 법적 절차를 진행하고, 이후 채권추심을 이어감</li>
         </ol>
-        <p class="result">→ "받을 사람이 사라졌다"던 채권, 책임질 사람을 다시 세워 회수 진행 중</p>
+        <p class="result">→ 채권 회수 완료</p>
         <p class="kicker">채무자는 이름을 바꿔도, 돈의 흐름은 흔적을 남깁니다.</p>
-        <div class="stamp">회수 진행<small>진행 中</small></div>
+        <div class="stamp">회수 완료<small>종결 · 完</small></div>
       </div>
 
     </div>
+    <p style="margin-top:16px;font-size:13px;color:var(--ink-soft)">위 사례는 실제 업무 사례를 특정인이 드러나지 않도록 익명화·재구성한 것입니다. 채권의 상태와 채무자의 상황에 따라 결과는 달라질 수 있습니다.</p>
   </div>
 </section>
 
@@ -506,15 +507,16 @@ footer .fine{margin-top:18px;font-size:12px}
         <label for="f-type">채권 유형</label>
         <select id="f-type" name="type">
           <option value="">선택 (선택사항)</option>
-          <option>개인 간 채권 (대여금 등)</option>
+          <option>집행권원이 있는 개인채권 (판결·확정 지급명령 등)</option>
           <option>사업자 미수금 (공사·물품·용역대금)</option>
-          <option>판결·지급명령 받은 상태</option>
+          <option>판결 전 개인 민사채권 (바로 위임 불가)</option>
           <option>기타 / 잘 모르겠음</option>
         </select>
       </div>
       <div class="field">
         <label for="f-memo">간단한 내용 (선택)</label>
-        <textarea id="f-memo" name="memo" placeholder="예) 3년 전 빌려준 2천만원, 채무자 연락 두절 상태입니다."></textarea>
+        <textarea id="f-memo" name="memo" placeholder="예) 확정된 지급명령 보유, 채무자 연락 두절 상태입니다."></textarea>
+        <p style="margin-top:7px;font-size:12.5px;color:var(--ink-soft)">주민등록번호, 계좌번호 등 채무자의 민감한 개인정보는 입력하지 마세요.</p>
       </div>
 
       <div class="consent">
@@ -537,8 +539,9 @@ footer .fine{margin-top:18px;font-size:12px}
       <p class="form-msg" id="formMsg"></p>
     </form>
 
-    <p class="direct">폼이 불편하시면 직접 연락 주셔도 됩니다 —
+    <p class="direct">접수 여부가 걱정되거나 폼이 불편하시면 직접 연락해 주세요 —
       전화 <a href="tel:01030549755">010-3054-9755</a> ·
+      <a href="sms:01030549755">문자 보내기</a> ·
       이메일 <a href="mailto:sjwpoo@naver.com">sjwpoo@naver.com</a>
     </p>
   </div>
@@ -574,6 +577,7 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhmMoDHrBFY3IbnCvQa
 
 const form = document.getElementById('leadForm');
 const msg  = document.getElementById('formMsg');
+const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async function(e){
   e.preventDefault();
@@ -605,6 +609,8 @@ form.addEventListener('submit', async function(e){
 
   if(SCRIPT_URL){
     try{
+      submitBtn.disabled = true;
+      submitBtn.textContent = '전송 중입니다…';
       await fetch(SCRIPT_URL, {
         method:'POST', mode:'no-cors',
         headers:{'Content-Type':'text/plain'},
@@ -612,13 +618,18 @@ form.addEventListener('submit', async function(e){
       });
     }catch(err){
       msg.textContent = '전송 중 문제가 발생했습니다. 전화나 문자로 연락 주세요.';
-      msg.classList.add('err'); return;
+      msg.classList.add('err');
+      submitBtn.disabled = false;
+      submitBtn.textContent = '상담 신청 접수하기';
+      return;
     }
   }
 
   form.reset();
-  msg.textContent = '접수되었습니다. 확인 후 직접 연락드리겠습니다.';
+  msg.textContent = '전송 요청이 완료되었습니다. 시스템 특성상 이 화면에서는 실제 저장 여부를 확인할 수 없습니다. 1영업일 안에 연락이 없으면 010-3054-9755로 전화나 문자를 부탁드립니다.';
   msg.classList.add('ok');
+  submitBtn.disabled = false;
+  submitBtn.textContent = '상담 신청 접수하기';
   if (typeof gtag === 'function') gtag('event', 'generate_lead');
 });
 </script>
